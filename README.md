@@ -30,7 +30,7 @@
 
 <!-- PROJECT DESCRIPTION -->
 
-# 📖 [Catalog Of Things] <a name="about-project"></a>
+# 📖 Catalog Of Things <a name="about-project"></a>
 
 **Catalog Of Things** is a Ruby-based project that is combined of several classes like `Item` with its relevant children such as `Book`, `MusicAlbum`, `Movie`, and `Game`, which is related together using _Inheritance_ relationship. The **Item** class is also related some other classes like `Author`, `Genre`, `Source`, and `Label` that has the **composition** one-to-many relationship.
 
@@ -59,8 +59,6 @@ The project is a command-line project that prompts the user to first create the 
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
-
-> Describe how a new developer could make use of your project.
 
 To get a local copy up and running, follow these steps.
 
