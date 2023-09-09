@@ -1,0 +1,10 @@
+ClassName: Item
+-id: int
++genre: Genre
++author: Authore
++source:Source
++label:Label
++publish_date:date
++archieved:boolean
+-can_be_archived?()
++move_to_archieved()
