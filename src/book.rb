@@ -14,6 +14,10 @@ class Book < Item
   end
 
   def to_s
-    "[#{self.class}]: Publisher: #{publisher}, Cover State: #{cover_state}, Publish Date: #{publish_date}"
+    details = ''
+    details << super
+    details << "\tPublisher: #{publisher}\n"
+    details << "\tCover state: #{cover_state}\n"
+    details
   end
 end

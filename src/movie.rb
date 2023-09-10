@@ -15,4 +15,11 @@ class Movie < Item
   def can_be_archieved?
     super || silent?
   end
+
+  def to_s
+    details = ''
+    details << super
+    details << "\tSilent: #{silent}\n"
+    details
+  end
 end

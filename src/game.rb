@@ -13,4 +13,12 @@ class Game < Item
   def can_be_archieved?
     Date.today.year - last_played_at.year > 2
   end
+
+  def to_s
+    details = ''
+    details << super
+    details << "\tMultiplayer: #{multiplayer}\n"
+    details << "\tLast Played: #{last_played_at.to_s}\n"
+    details
+  end
 end

@@ -22,4 +22,13 @@ class Item
   def can_be_archieved?
     Date.today.year - publish_date.year > 10
   end
+
+  def to_s
+    details = ''
+    details << "\tItem: #{self.class}\n"
+    details << "\tID: #{id}\n"
+    details << "\tPublish date: #{publish_date}\n"
+    details << "\tArchieved: #{archieved}\n"
+    details
+  end
 end
