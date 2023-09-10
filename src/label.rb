@@ -1,5 +1,4 @@
 require_relative 'item'
-require_relative 'book'
 
 class Label
   attr_accessor :name
@@ -19,6 +18,6 @@ class Label
   end
 
   def to_s
-    name
+    "[Label] #{name}"
   end
 end

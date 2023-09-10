@@ -1,5 +1,4 @@
 require_relative 'item'
-require_relative 'book'
 
 class Genre
   attr_accessor :name
@@ -19,6 +18,6 @@ class Genre
   end
 
   def to_s
-    name
+    "[Genre] #{name}"
   end
 end
