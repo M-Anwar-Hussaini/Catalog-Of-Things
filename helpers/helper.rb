@@ -4,33 +4,28 @@ module Helper
     gets.chomp
   end
 
-  def get_int(prompt)    
-    num = 0
-    loop do
-      print prompt
-      num = gets.chomp.to_i
-      if num.positive?
-        break
-      else
-        puts 'Input is invalid please enter an integer!'
-      end
-    end
-    num
-  end
-
-  def display_array(arr, message)
+  def display_array(arr, title)
     puts
-    puts message
+    puts title
     arr.each_with_index do |item, index|
       puts "#{index + 1}) #{item}"
     end
     puts
   end
 
-  def get_option(prompt, array)
+  def get_array_index(array, title, prompt)
+    display_array(array, title)
+    print prompt
+    gets.chomp.to_i - 1
+  end
+
+  def create_folder(folder_name)
+    Dir.mkdir(folder_name) unless File.directory?(folder_name)
+  end
+
+  def get_option(prompt, _array)
     loop do
       print prompt
-      
     end
   end
 end

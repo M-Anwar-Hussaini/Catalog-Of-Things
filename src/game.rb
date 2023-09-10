@@ -18,7 +18,7 @@ class Game < Item
     details = ''
     details << super
     details << "\tMultiplayer: #{multiplayer}\n"
-    details << "\tLast Played: #{last_played_at.to_s}\n"
+    details << "\tLast Played: #{last_played_at}\n"
     details
   end
 end
