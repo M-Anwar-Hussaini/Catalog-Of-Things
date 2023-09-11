@@ -9,4 +9,11 @@ class Label
     @name = name
     @items = []
   end
+
+  def add_item(item)
+    raise ArgumentError('The provided argument is not instance of "Item".') unless item.is_a?(Item)
+
+    item.label = self
+    @items << item
+  end
 end
