@@ -1,16 +1,6 @@
 require 'json'
-require_relative '../src/author'
-require_relative '../src/genre'
-require_relative '../src/label'
-require_relative '../src/source'
-require_relative '../src/book'
-require_relative '../src/game'
-require_relative '../src/movie'
-require_relative '../src/music_album'
-require_relative 'helper'
-require_relative 'creations'
 
-module Json
+module ArrayToJson
   def authors_to_json(authors)
     result = authors.map do |author|
       create_author_hash(author)
@@ -49,11 +39,6 @@ module Json
       end
     end
     JSON.pretty_generate(result)
-  end
-
-  def create_default_file(path)
-    default = JSON.pretty_generate([])
-    File.write(path, default) unless File.exist?(path)
   end
 
   private

@@ -1,20 +1,12 @@
 require 'json'
-require_relative '../src/book'
-require_relative '../src/game'
-require_relative '../src/movie'
-require_relative '../src/music_album'
-require_relative '../src/author'
-require_relative '../src/genre'
-require_relative '../src/label'
-require_relative '../src/source'
 
-module Reader
+module FileToArray
   def read_file(path)
     JSON.parse(File.read(path))
   end
 
-  def items_to_array(arr)
-    arr.map do |item|
+  def items_to_array(file)
+    file.map do |item|
       case item
       when Book then create_book_obj(item)
       when Game then create_game_obj(item)

@@ -1,4 +1,4 @@
-module Helper
+module Utilities
   def get_text(prompt)
     print prompt
     gets.chomp
@@ -17,10 +17,6 @@ module Helper
     display_array(array, title)
     print prompt
     gets.chomp.to_i - 1
-  end
-
-  def create_folder(folder_name)
-    Dir.mkdir(folder_name) unless File.directory?(folder_name)
   end
 
   def display_options

@@ -6,18 +6,20 @@ require_relative '../src/book'
 require_relative '../src/game'
 require_relative '../src/movie'
 require_relative '../src/music_album'
-require_relative 'helper'
-require_relative 'creations'
-require_relative 'json'
-require_relative 'reader'
+require_relative 'utilities'
+require_relative 'item_creation'
+require_relative 'array_to_json'
+require_relative 'file_to_array'
+require_relative 'file_manipulation'
 require_relative 'paths'
 
 class Application
-  include Helper
-  include Elements
-  include Json
-  include Reader
+  include ArrayToJson
+  include FileToArray
+  include ItemCreation
+  include Utilities
   include Paths
+  include FileManipulation
   attr_reader :authors, :genres, :labels, :sources, :items
 
   def initialize
@@ -112,15 +114,6 @@ class Application
   end
 
   def load_data; end
-
-  def create_files_folders
-    create_folder('json')
-    create_default_file(AUTHORS_PATH)
-    create_default_file(GENRES_PATH)
-    create_default_file(LABELS_PATH)
-    create_default_file(SOURCES_PATH)
-    create_default_file(ITEMS_PATH)
-  end
 
   def quit_app
     File.write('./json/Authors.json', authors_to_json(authors))

@@ -1,10 +1,4 @@
-require_relative '../src/book'
-require_relative '../src/game'
-require_relative '../src/movie'
-require_relative '../src/music_album'
-require_relative 'helper'
-
-module Elements
+module ItemCreation
   def create_book
     publisher = get_text('Please enter the book\'s publisher: ')
     cover_state = get_text("Please enter book's cover state: ")
@@ -26,7 +20,7 @@ module Elements
   end
 
   def create_music_album
-    on_spotify = get_text('Is the album on Apotify [Y/N]: ').downcase == 'y'
+    on_spotify = get_text('Is the album on Spotify [Y/N]: ').downcase == 'y'
     publish_date = get_text("Please enter album's publish date in the format of [yyyy-mm-dd]: ")
     MusicAlbum.new(on_spotify, publish_date)
   end
