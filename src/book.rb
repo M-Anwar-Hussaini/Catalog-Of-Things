@@ -8,4 +8,16 @@ class Book < Item
     @cover_state = cover_state
     super(publish_date, id: id)
   end
+
+  def can_be_archieved?
+    @cover_state.to_s.downcase == 'bad'
+  end
+
+  def to_s
+    details = ''
+    details << super
+    details << "\tPublisher: #{publisher}\n"
+    details << "\tCover state: #{cover_state}\n"
+    details
+  end
 end
