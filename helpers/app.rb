@@ -9,11 +9,15 @@ require_relative '../src/music_album'
 require_relative 'helper'
 require_relative 'creations'
 require_relative 'json'
+require_relative 'reader'
+require_relative 'paths'
 
 class Application
   include Helper
   include Elements
   include Json
+  include Reader
+  include Paths
   attr_reader :authors, :genres, :labels, :sources, :items
 
   def initialize
@@ -107,14 +111,15 @@ class Application
     end
   end
 
+  def load_data; end
+
   def create_files_folders
     create_folder('json')
-    default = JSON.pretty_generate([])
-    File.write('json/Authors.json', default) unless File.exist?('json/Authors.json')
-    File.write('json/Genres.json', default) unless File.exist?('json/Genres.json')
-    File.write('json/Labels.json', default) unless File.exist?('json/Labels.json')
-    File.write('json/Sources.json', default) unless File.exist?('json/Sources.json')
-    File.write('json/Items.json', default) unless File.exist?('json/Items.json')
+    create_default_file(AUTHORS_PATH)
+    create_default_file(GENRES_PATH)
+    create_default_file(LABELS_PATH)
+    create_default_file(SOURCES_PATH)
+    create_default_file(ITEMS_PATH)
   end
 
   def quit_app

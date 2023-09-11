@@ -51,6 +51,11 @@ module Json
     JSON.pretty_generate(result)
   end
 
+  def create_default_file(path)
+    default = JSON.pretty_generate([])
+    File.write(path, default) unless File.exist?(path)
+  end
+
   private
 
   def create_author_hash(author)
