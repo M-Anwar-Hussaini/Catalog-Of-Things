@@ -1,1 +1,5 @@
-# Code for label
+require_relative 'item'
+
+class Label
+  
+end
