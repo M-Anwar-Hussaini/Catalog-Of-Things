@@ -8,10 +8,12 @@ require_relative '../src/movie'
 require_relative '../src/music_album'
 require_relative 'helper'
 require_relative 'creations'
+require_relative 'json'
 
 class Application
   include Helper
   include Elements
+  include Json
   attr_reader :authors, :genres, :labels, :sources, :items
 
   def initialize
@@ -20,6 +22,8 @@ class Application
     @labels = []
     @sources = []
     @items = []
+    create_files_folders
+    run
   end
 
   def add_author
@@ -73,8 +77,51 @@ class Application
       sources[source_index].add_item(item)
 
       items << item
+      puts 'Item was add successfully'
+      puts
     else
       display_array(message, "New item can't be added because: ")
     end
+  end
+
+  def run
+    loop do
+      display_options
+      number = gets.chomp.to_i
+      case number
+      when 1 then add_author
+      when 2 then add_genre
+      when 3 then add_label
+      when 4 then add_source
+      when 5 then add_item
+      when 6 then display_array(authors, 'List of authors: ')
+      when 7 then display_array(genres, 'List of genres: ')
+      when 8 then display_array(labels, 'List of labels: ')
+      when 9 then display_array(sources, 'List of sources: ')
+      when 10 then display_array(items, 'List of items: ')
+      when 0
+        quit_app
+        puts "\nThanks for using this app.\nGood luck!!"
+        break
+      end
+    end
+  end
+
+  def create_files_folders
+    create_folder('json')
+    default = JSON.pretty_generate([])
+    File.write('json/Authors.json', default) unless File.exist?('json/Authors.json')
+    File.write('json/Genres.json', default) unless File.exist?('json/Genres.json')
+    File.write('json/Labels.json', default) unless File.exist?('json/Labels.json')
+    File.write('json/Sources.json', default) unless File.exist?('json/Sources.json')
+    File.write('json/Items.json', default) unless File.exist?('json/Items.json')
+  end
+
+  def quit_app
+    File.write('./json/Authors.json', authors_to_json(authors))
+    File.write('./json/Genres.json', genres_to_json(genres))
+    File.write('./json/Labels.json', labels_to_json(labels))
+    File.write('./json/Sources.json', sources_to_json(sources))
+    File.write('./json/Items.json', items_to_json(items))
   end
 end
