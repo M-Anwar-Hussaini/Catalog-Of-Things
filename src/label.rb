@@ -16,4 +16,8 @@ class Label
     item.label = self
     @items << item
   end
+
+  def to_s
+    "[Label] #{name}"
+  end
 end
