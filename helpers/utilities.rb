@@ -10,6 +10,7 @@ module Utilities
     arr.each_with_index do |item, index|
       puts "#{index + 1}) #{item}"
     end
+    puts 'The list is empty.' if arr.empty?
     puts
   end
 

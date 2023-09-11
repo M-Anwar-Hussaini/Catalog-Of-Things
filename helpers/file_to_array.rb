@@ -5,19 +5,19 @@ module FileToArray
     JSON.parse(File.read(path))
   end
 
-  def items_to_array(file)
-    file.map do |item|
-      case item
-      when Book then create_book_obj(item)
-      when Game then create_game_obj(item)
-      when Movie then create_movie_obj(item)
-      when MusicAlbum then create_album_obj(item)
+  def items_to_array(path)
+    read_file(path).map do |item|
+      case item['Type']
+      when 'Book' then create_book_obj(item)
+      when 'Game' then create_game_obj(item)
+      when 'Movie' then create_movie_obj(item)
+      when 'MusicAlbum' then create_album_obj(item)
       end
     end
   end
 
-  def authors_to_array(authors)
-    authors.map do |author|
+  def authors_to_array(path)
+    read_file(path).map do |author|
       first_name = author['First Name']
       last_name = author['Last Name']
       id = author['ID']
@@ -26,7 +26,7 @@ module FileToArray
   end
 
   def genres_to_array(genres)
-    genres.map do |genre|
+    read_file(genres).map do |genre|
       name = genre['Name']
       id = genre['ID']
       Genre.new(name, id: id)
@@ -34,7 +34,7 @@ module FileToArray
   end
 
   def labels_to_array(labels)
-    labels.map do |label|
+    read_file(labels).map do |label|
       name = label['Name']
       id = label['ID']
       Label.new(name, id: id)
@@ -42,7 +42,7 @@ module FileToArray
   end
 
   def sources_to_array(sources)
-    sources.map do |source|
+    read_file(sources).map do |source|
       name = source['Name']
       id = source['ID']
       Label.new(name, id: id)

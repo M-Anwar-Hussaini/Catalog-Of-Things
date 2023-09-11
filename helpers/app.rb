@@ -23,11 +23,11 @@ class Application
   attr_reader :authors, :genres, :labels, :sources, :items
 
   def initialize
-    @authors = []
-    @genres = []
-    @labels = []
-    @sources = []
-    @items = []
+    @authors = File.exist?(AUTHORS_PATH) ? authors_to_array(AUTHORS_PATH) : []
+    @genres = File.exist?(GENRES_PATH) ? genres_to_array(GENRES_PATH) : []
+    @labels = File.exist?(LABELS_PATH) ? labels_to_array(LABELS_PATH) : []
+    @sources = File.exist?(SOURCES_PATH) ? sources_to_array(SOURCES_PATH) : []
+    @items = File.exist?(ITEMS_PATH) ? items_to_array(ITEMS_PATH) : []
     create_files_folders
     run
   end
@@ -106,20 +106,18 @@ class Application
       when 9 then display_array(sources, 'List of sources: ')
       when 10 then display_array(items, 'List of items: ')
       when 0
-        quit_app
+        save_all
         puts "\nThanks for using this app.\nGood luck!!"
         break
       end
     end
   end
 
-  def load_data; end
-
-  def quit_app
-    File.write('./json/Authors.json', authors_to_json(authors))
-    File.write('./json/Genres.json', genres_to_json(genres))
-    File.write('./json/Labels.json', labels_to_json(labels))
-    File.write('./json/Sources.json', sources_to_json(sources))
-    File.write('./json/Items.json', items_to_json(items))
+  def save_all
+    save_file(AUTHORS_PATH, authors_to_json(authors))
+    save_file(GENRES_PATH, genres_to_json(genres))
+    save_file(LABELS_PATH, labels_to_json(labels))
+    save_file(SOURCES_PATH, sources_to_json(sources))
+    save_file(ITEMS_PATH, items_to_json(items))
   end
 end
