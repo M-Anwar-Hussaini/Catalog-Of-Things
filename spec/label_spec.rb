@@ -15,5 +15,9 @@ describe Label do
     it 'The id of label should be 120' do
       expect(label.id).to eq(120)
     end
+
+    it 'Currently Label has not item' do
+      expect(label.items).to be_empty
+    end
   end
 end
