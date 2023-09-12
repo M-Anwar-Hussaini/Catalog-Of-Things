@@ -8,4 +8,11 @@ class Author
     @last_name = last_name.capitalize
     @items = []
   end
+
+  def add_item(item)
+    raise ArgumentError('The argument is not an instance of item.') unless item.is_a?(Item)
+
+    item.author = self
+    items << item
+  end
 end
