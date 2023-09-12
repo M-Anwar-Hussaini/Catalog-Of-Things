@@ -20,4 +20,23 @@ describe Label do
       expect(label.items).to be_empty
     end
   end
+
+  describe '#respond_to' do
+    label = Label.new('Expired')
+    it 'Label class has the id attribute' do
+      expect(label).to respond_to(:id)
+    end
+
+    it 'Label class has the name attribute' do
+      expect(label).to respond_to(:name)
+    end
+
+    it 'Label class has the items attribute' do
+      expect(label).to respond_to(:items)
+    end
+
+    it 'Label class has the add_item method' do
+      expect(label).to respond_to(:add_item)
+    end
+  end
 end
