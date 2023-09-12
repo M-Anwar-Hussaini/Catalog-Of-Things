@@ -11,4 +11,11 @@ class MusicAlbum < Item
   def can_be_archieved?
     super && on_spotify
   end
+  
+  def to_s
+    details = ''
+    details << super
+    details << "\tOn Spotify: #{on_spotify}\n"
+    details
+  end
 end
