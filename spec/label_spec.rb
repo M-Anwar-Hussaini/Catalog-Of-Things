@@ -1,12 +1,13 @@
 require 'rspec'
 require_relative '../src/label'
+require_relative  '../src/book'
 
 describe Label do
   describe '#initialize' do
     before do
       @label = Label.new('Marked', id: 120)
     end
-    
+
     it 'The name of label is Marked' do
       expect(@label.name).to eq('Marked')
     end
@@ -42,6 +43,27 @@ describe Label do
 
     it 'Label class has the add_item method' do
       expect(@label).to respond_to(:add_item)
+    end
+  end
+
+  describe '#add_item' do
+    before do
+      @label = Label.new('New')
+      @book = Book.new('Ali Baba', 'Brand', '2009-2-2')
+    end
+
+    it 'Label has no item at the beginning' do
+      expect(@label.items).to be_empty
+    end
+
+    it 'After adding one item the list of items increases.' do
+      @label.add_item(@book)
+      expect(@label.items.length).to eq(1)
+    end
+    
+    it 'The book is in the list of the label' do
+      @label.add_item(@book)
+      expect(@label.items).to include(@book)
     end
   end
 end
