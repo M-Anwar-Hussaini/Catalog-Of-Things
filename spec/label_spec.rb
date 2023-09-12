@@ -1,6 +1,6 @@
 require 'rspec'
 require_relative '../src/label'
-require_relative  '../src/book'
+require_relative '../src/book'
 
 describe Label do
   describe '#initialize' do
@@ -60,7 +60,7 @@ describe Label do
       @label.add_item(@book)
       expect(@label.items.length).to eq(1)
     end
-    
+
     it 'The book is in the list of the label' do
       @label.add_item(@book)
       expect(@label.items).to include(@book)
