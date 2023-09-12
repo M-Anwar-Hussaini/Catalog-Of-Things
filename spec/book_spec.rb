@@ -28,5 +28,9 @@ describe Book, Item do
     end
   end
 
-  
+  describe Item do
+    it 'The Book. has inherited from Item class.' do
+      expect(Book.ancestors).to include(Item)
+    end
+  end
 end
