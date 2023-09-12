@@ -15,4 +15,8 @@ class Author
     item.author = self
     items << item
   end
+
+  def to_s
+    "[Author] #{first_name} #{last_name}"
+  end
 end
