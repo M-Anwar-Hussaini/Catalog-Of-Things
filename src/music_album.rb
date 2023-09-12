@@ -7,4 +7,8 @@ class MusicAlbum < Item
     super(publish_date, id: id)
     @on_spotify = on_spotify
   end
+
+  def can_be_archieved?
+    super && on_spotify
+  end
 end
