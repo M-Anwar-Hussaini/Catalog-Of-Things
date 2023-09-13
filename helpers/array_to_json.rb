@@ -15,7 +15,6 @@ module ArrayToJson
     JSON.pretty_generate(result)
   end
 
-  
   def labels_to_json(labels)
     result = labels.map do |label|
       create_label_hash(label)
@@ -23,7 +22,6 @@ module ArrayToJson
     JSON.pretty_generate(result)
   end
 
-  
   def sources_to_json(sources)
     result = sources.map do |source|
       create_source_hash(source)
@@ -89,7 +87,6 @@ module ArrayToJson
     }
   end
 
-  
   def create_game_hash(game)
     {
       'Type' => game.class,
@@ -108,6 +105,16 @@ module ArrayToJson
       'Is Silent' => movie.silent?,
       'Publish Date' => movie.publish_date,
       'Archiveable' => movie.can_be_archieved?
+    }
+  end
+
+  def create_album_hash(album)
+    {
+      'Type' => album.class,
+      'ID' => album.id,
+      'On Spotify' => album.on_spotify,
+      'Publish Date' => album.publish_date,
+      'Archiveable' => album.can_be_archieved?
     }
   end
 end
