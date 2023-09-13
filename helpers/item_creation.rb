@@ -35,4 +35,13 @@ module ItemCreation
     print 'Select an option [Enter integer]: '
     gets.chomp.to_i
   end
+
+  def create_item(option)
+    case option
+    when 1 then create_book
+    when 2 then create_game
+    when 3 then create_movie
+    when 4 then create_music_album
+    end
+  end
 end
