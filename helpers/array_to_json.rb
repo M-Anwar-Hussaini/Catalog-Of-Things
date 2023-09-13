@@ -69,4 +69,12 @@ module ArrayToJson
       'ID' => label.id
     }
   end
+
+  def create_source_hash(source)
+    {
+      'Type' => source.class,
+      'Name' => source.name,
+      'ID' => source.id
+    }
+  end
 end
