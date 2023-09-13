@@ -30,4 +30,16 @@ module ArrayToJson
     end
     JSON.pretty_generate(result)
   end
+
+  def items_to_json(items)
+    result = items.map do |item|
+      case item
+      when Book then create_book_hash(item)
+      when Game then create_game_hash(item)
+      when Movie then create_movie_hash(item)
+      when MusicAlbum then create_album_hash(item)
+      end
+    end
+    JSON.pretty_generate(result)
+  end
 end
