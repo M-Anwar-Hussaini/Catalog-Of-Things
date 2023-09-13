@@ -7,4 +7,11 @@ module ArrayToJson
     end
     JSON.pretty_generate(result)
   end
+
+  def genres_to_json(genres)
+    result = genres.map do |genre|
+      create_genre_hash(genre)
+    end
+    JSON.pretty_generate(result)
+  end
 end
