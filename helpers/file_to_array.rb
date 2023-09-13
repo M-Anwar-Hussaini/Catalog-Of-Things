@@ -5,6 +5,17 @@ module FileToArray
     JSON.parse(File.read(path))
   end
 
+  def items_to_array(path)
+    read_file(path).map do |item|
+      case item['Type']
+      when 'Book' then create_book_obj(item)
+      when 'Game' then create_game_obj(item)
+      when 'Movie' then create_movie_obj(item)
+      when 'MusicAlbum' then create_album_obj(item)
+      end
+    end
+  end
+
   private
 
   def create_book_obj(book_hash)
