@@ -21,4 +21,3 @@ class Source
     "[Source] #{name}"
   end
 end
-r
