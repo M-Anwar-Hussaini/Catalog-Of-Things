@@ -42,4 +42,15 @@ module ArrayToJson
     end
     JSON.pretty_generate(result)
   end
+
+  private
+
+  def create_author_hash(author)
+    {
+      'Type' => author.class,
+      'ID' => author.id,
+      'First Name' => author.first_name,
+      'Last Name' => author.last_name
+    }
+  end
 end
