@@ -88,4 +88,16 @@ module ArrayToJson
       'Archiveable' => book.can_be_archieved?
     }
   end
+
+  
+  def create_game_hash(game)
+    {
+      'Type' => game.class,
+      'ID' => game.id,
+      'Multiplayer' => game.multiplayer,
+      'Last Played' => game.last_played_at,
+      'Publish Date' => game.publish_date,
+      'Archiveable' => game.can_be_archieved?
+    }
+  end
 end
