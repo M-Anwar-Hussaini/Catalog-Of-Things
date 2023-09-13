@@ -16,6 +16,39 @@ module FileToArray
     end
   end
 
+  def authors_to_array(path)
+    read_file(path).map do |author|
+      first_name = author['First Name']
+      last_name = author['Last Name']
+      id = author['ID']
+      Author.new(first_name, last_name, id: id)
+    end
+  end
+
+  def genres_to_array(genres)
+    read_file(genres).map do |genre|
+      name = genre['Name']
+      id = genre['ID']
+      Genre.new(name, id: id)
+    end
+  end
+
+  def labels_to_array(labels)
+    read_file(labels).map do |label|
+      name = label['Name']
+      id = label['ID']
+      Label.new(name, id: id)
+    end
+  end
+
+  def sources_to_array(sources)
+    read_file(sources).map do |source|
+      name = source['Name']
+      id = source['ID']
+      Label.new(name, id: id)
+    end
+  end
+
   private
 
   def create_book_obj(book_hash)
