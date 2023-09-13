@@ -61,4 +61,12 @@ module ArrayToJson
       'ID' => genre.id
     }
   end
+
+  def create_label_hash(label)
+    {
+      'Type' => label.class,
+      'Name' => label.name,
+      'ID' => label.id
+    }
+  end
 end
