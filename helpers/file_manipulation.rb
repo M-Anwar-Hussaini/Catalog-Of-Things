@@ -20,4 +20,8 @@ module FileManipulation
     create_default_file(SOURCES_PATH)
     create_default_file(ITEMS_PATH)
   end
+
+  def save_file(file_path, json_data)
+    File.write(file_path, json_data)
+  end
 end
