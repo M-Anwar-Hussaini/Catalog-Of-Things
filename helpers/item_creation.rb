@@ -12,4 +12,10 @@ module ItemCreation
     publish_date = get_text("Please enter game's publish date in the format of [yyyy-mm-dd]: ")
     Game.new(multiplayer, last_played_at, publish_date)
   end
+
+  def create_movie
+    silent = get_text('Is the movie silent [Y/N]: ').downcase == 'y'
+    publish_date = get_text("Please enter movie's publish date in the format of [yyyy-mm-dd]: ")
+    Movie.new(silent, publish_date)
+  end
 end
