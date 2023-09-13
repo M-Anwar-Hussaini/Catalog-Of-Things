@@ -100,4 +100,14 @@ module ArrayToJson
       'Archiveable' => game.can_be_archieved?
     }
   end
+
+  def create_movie_hash(movie)
+    {
+      'Type' => movie.class,
+      'ID' => movie.id,
+      'Is Silent' => movie.silent?,
+      'Publish Date' => movie.publish_date,
+      'Archiveable' => movie.can_be_archieved?
+    }
+  end
 end
