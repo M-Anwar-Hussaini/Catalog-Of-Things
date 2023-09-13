@@ -53,4 +53,12 @@ module ArrayToJson
       'Last Name' => author.last_name
     }
   end
+
+  def create_genre_hash(genre)
+    {
+      'Type' => genre.class,
+      'Name' => genre.name,
+      'ID' => genre.id
+    }
+  end
 end
