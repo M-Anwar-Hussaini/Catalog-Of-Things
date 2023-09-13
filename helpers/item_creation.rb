@@ -24,4 +24,15 @@ module ItemCreation
     publish_date = get_text("Please enter album's publish date in the format of [yyyy-mm-dd]: ")
     MusicAlbum.new(on_spotify, publish_date)
   end
+
+  def choose_item_option
+    puts
+    puts 'Which item do you want to create?'
+    puts '1 - To create a book.'
+    puts '2 - To create a game.'
+    puts '3 - To create a movie.'
+    puts '4 - To create a music album.'
+    print 'Select an option [Enter integer]: '
+    gets.chomp.to_i
+  end
 end
