@@ -77,4 +77,15 @@ module ArrayToJson
       'ID' => source.id
     }
   end
+
+  def create_book_hash(book)
+    {
+      'Type' => book.class,
+      'ID' => book.id,
+      'Publisher' => book.publisher,
+      'Cover State' => book.cover_state,
+      'Publish Date' => book.publish_date,
+      'Archiveable' => book.can_be_archieved?
+    }
+  end
 end
