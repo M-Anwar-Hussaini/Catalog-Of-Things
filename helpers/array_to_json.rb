@@ -14,4 +14,12 @@ module ArrayToJson
     end
     JSON.pretty_generate(result)
   end
+
+  
+  def labels_to_json(labels)
+    result = labels.map do |label|
+      create_label_hash(label)
+    end
+    JSON.pretty_generate(result)
+  end
 end
