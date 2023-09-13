@@ -44,28 +44,22 @@ module ArrayToJson
   private
 
   def create_author_hash(author)
-    {
-      'Type' => author.class,
+    { 'Type' => author.class,
       'ID' => author.id,
       'First Name' => author.first_name,
-      'Last Name' => author.last_name
-    }
+      'Last Name' => author.last_name }
   end
 
   def create_genre_hash(genre)
-    {
-      'Type' => genre.class,
+    { 'Type' => genre.class,
       'Name' => genre.name,
-      'ID' => genre.id
-    }
+      'ID' => genre.id }
   end
 
   def create_label_hash(label)
-    {
-      'Type' => label.class,
+    { 'Type' => label.class,
       'Name' => label.name,
-      'ID' => label.id
-    }
+      'ID' => label.id }
   end
 
   def create_source_hash(source)
@@ -77,44 +71,36 @@ module ArrayToJson
   end
 
   def create_book_hash(book)
-    {
-      'Type' => book.class,
+    { 'Type' => book.class,
       'ID' => book.id,
       'Publisher' => book.publisher,
       'Cover State' => book.cover_state,
       'Publish Date' => book.publish_date,
-      'Archiveable' => book.can_be_archieved?
-    }
+      'Archiveable' => book.can_be_archieved? }
   end
 
   def create_game_hash(game)
-    {
-      'Type' => game.class,
+    { 'Type' => game.class,
       'ID' => game.id,
       'Multiplayer' => game.multiplayer,
       'Last Played' => game.last_played_at,
       'Publish Date' => game.publish_date,
-      'Archiveable' => game.can_be_archieved?
-    }
+      'Archiveable' => game.can_be_archieved? }
   end
 
   def create_movie_hash(movie)
-    {
-      'Type' => movie.class,
+    { 'Type' => movie.class,
       'ID' => movie.id,
       'Is Silent' => movie.silent?,
       'Publish Date' => movie.publish_date,
-      'Archiveable' => movie.can_be_archieved?
-    }
+      'Archiveable' => movie.can_be_archieved? }
   end
 
   def create_album_hash(album)
-    {
-      'Type' => album.class,
+    { 'Type' => album.class,
       'ID' => album.id,
       'On Spotify' => album.on_spotify,
       'Publish Date' => album.publish_date,
-      'Archiveable' => album.can_be_archieved?
-    }
+      'Archiveable' => album.can_be_archieved? }
   end
 end
