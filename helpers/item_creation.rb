@@ -18,4 +18,10 @@ module ItemCreation
     publish_date = get_text("Please enter movie's publish date in the format of [yyyy-mm-dd]: ")
     Movie.new(silent, publish_date)
   end
+
+  def create_music_album
+    on_spotify = get_text('Is the album on Spotify [Y/N]: ').downcase == 'y'
+    publish_date = get_text("Please enter album's publish date in the format of [yyyy-mm-dd]: ")
+    MusicAlbum.new(on_spotify, publish_date)
+  end
 end
