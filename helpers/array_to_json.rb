@@ -22,4 +22,12 @@ module ArrayToJson
     end
     JSON.pretty_generate(result)
   end
+
+  
+  def sources_to_json(sources)
+    result = sources.map do |source|
+      create_source_hash(source)
+    end
+    JSON.pretty_generate(result)
+  end
 end
