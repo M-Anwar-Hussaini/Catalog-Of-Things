@@ -46,4 +46,22 @@ describe Author, Item do
       expect(author.items).to include(Item)
     end
   end
+
+  describe 'Test accessors and readers' do
+    it 'Author class has the first_name attribute' do
+      expect(author).to respond_to(:first_name)
+    end
+
+    it 'Author class has the last_name attribute' do
+      expect(author).to respond_to(:last_name)
+    end
+
+    it 'Author class has the items attribute' do
+      expect(author).to respond_to(:items)
+    end
+
+    it 'Author class has the id attribute' do
+      expect(author).to respond_to(:id)
+    end
+  end
 end
