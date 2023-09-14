@@ -138,6 +138,11 @@ To run tests, run the following command go to the root directory of the project:
 - GitHub: [@M-Anwar-Hussaini](https://github.com/M-Anwar-Hussaini/)
 - LinkedIn: [Anwar Hussaini](https://www.linkedin.com/in/anwar-hussaini/)
 
+👤 **Abdelaziz Mahdi**
+
+- GitHub: [@Abdelaziz-Mahdi](https://github.com/Abdelaziz-Mahdi)
+- Twitter: [@_AbdelazizMahdi](https://twitter.com/_AbdelazizMahdi)
+- LinkedIn: [in/abdelaziz-mahdi](https://www.linkedin.com/in/abdelaziz-mahdi)
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
