@@ -27,4 +27,10 @@ describe Game, Item do
       expect(Game.new(true, '2022-2-2', '1999-2-2').can_be_archieved?).to eq(false)
     end
   end
+
+  describe Item do
+    it 'The Game. has inherited from Item class.' do
+      expect(Game.ancestors).to include(Item)
+    end
+  end
 end
