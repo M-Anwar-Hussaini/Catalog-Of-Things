@@ -11,7 +11,7 @@ class Genre
   end
 
   def add_item(item)
-    raise ArgumentError('The provided argument is not instance of Item class') unless item.is_a?(Item)
+    raise ArgumentError, 'The provided argument is not an instance of Item class' unless item.is_a?(Item)
 
     item.genre = self
     @items << item
