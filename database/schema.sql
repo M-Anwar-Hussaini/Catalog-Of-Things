@@ -17,3 +17,8 @@ CREATE TABLE games (
     source_id INTEGER REFERENCES sources(id),
     label_id INTEGER REFERENCES labels(id)
 );
+
+CREATE TABLE genres (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50)
+);
