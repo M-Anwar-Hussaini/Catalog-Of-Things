@@ -33,4 +33,14 @@ describe Game, Item do
       expect(Game.ancestors).to include(Item)
     end
   end
+
+  describe 'Test accessors' do
+    it 'Game class has the multiplayer attribute' do
+      expect(game).to respond_to(:multiplayer)
+    end
+
+    it 'Game class has the last_played_at attribute' do
+      expect(game).to respond_to(:last_played_at)
+    end
+  end
 end
