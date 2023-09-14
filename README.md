@@ -55,6 +55,9 @@ The project is a command-line project that prompts the user to first create the 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## Vedio Represntation
+- In this [vedio](https://youtu.be/zlEN-XIbZO4?si=7LJvpYQOOXANHLet) you can see that how the project works.
+
 <!-- GETTING STARTED -->
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -138,7 +141,17 @@ To run tests, run the following command go to the root directory of the project:
 - GitHub: [@M-Anwar-Hussaini](https://github.com/M-Anwar-Hussaini/)
 - LinkedIn: [Anwar Hussaini](https://www.linkedin.com/in/anwar-hussaini/)
 
+👤 **Abdelaziz Mahdi**
 
+- GitHub: [@Abdelaziz-Mahdi](https://github.com/Abdelaziz-Mahdi)
+- Twitter: [@_AbdelazizMahdi](https://twitter.com/_AbdelazizMahdi)
+- LinkedIn: [in/abdelaziz-mahdi](https://www.linkedin.com/in/abdelaziz-mahdi)
+
+👤 **lRebornsl**
+
+- GitHub: [@lRebornsl](https://github.com/lRebornsl)
+- Twitter: [@RebornsDev](https://twitter.com/RebornsDev)
+- LinkedIn: [Anthony Vásquez](https://www.linkedin.com/in/avvm98/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
