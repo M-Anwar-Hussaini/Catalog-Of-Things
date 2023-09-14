@@ -147,6 +147,11 @@ To run tests, run the following command go to the root directory of the project:
 - Twitter: [@_AbdelazizMahdi](https://twitter.com/_AbdelazizMahdi)
 - LinkedIn: [in/abdelaziz-mahdi](https://www.linkedin.com/in/abdelaziz-mahdi)
 
+👤 **lRebornsl**
+
+- GitHub: [@lRebornsl](https://github.com/lRebornsl)
+- Twitter: [@RebornsDev](https://twitter.com/RebornsDev)
+- LinkedIn: [Anthony Vásquez](https://www.linkedin.com/in/avvm98/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
