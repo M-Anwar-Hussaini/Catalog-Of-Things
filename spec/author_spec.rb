@@ -17,4 +17,33 @@ describe Author, Item do
       expect(author.last_name).to eq('Doe')
     end
   end
+
+  describe 'Test method add_item' do
+    before do
+      @item = Item.new('2000-2-2')
+    end
+
+    it 'The author has no item at the beginning' do
+      expect(author.items).to be_empty
+    end
+
+    it 'The author has added an item' do
+      author.add_item(@item)
+      expect(author.items.length).to eq(1)
+    end
+
+    it 'The author has added an item with the correct date' do
+      author.add_item(@item)
+      expect(author.items[0].publish_date).to eq(Date.parse('2000-2-2'))
+    end
+
+    it 'The author has added an item with the correct author' do
+      author.add_item(@item)
+      expect(author.items[0].author).to eq(author)
+    end
+
+    it 'The author has aggregated from the item class' do
+      expect(author.items).to include(Item)
+    end
+  end
 end
