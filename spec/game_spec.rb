@@ -17,4 +17,14 @@ describe Game, Item do
       expect(game.last_played_at).to eq(Date.parse('2018-2-2'))
     end
   end
+
+  describe '#can_be_archieved?' do
+    it 'This game is can not be archieved for now' do
+      expect(game.can_be_archieved?).to eq(true)
+    end
+
+    it 'A game with last played date more than 2 years can be archieved.' do
+      expect(Game.new(true, '2022-2-2', '1999-2-2').can_be_archieved?).to eq(false)
+    end
+  end
 end
