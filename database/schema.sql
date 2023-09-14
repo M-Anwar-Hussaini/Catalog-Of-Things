@@ -22,3 +22,14 @@ CREATE TABLE genres (
 	id SERIAL PRIMARY KEY,
 	name VARCHAR(50)
 );
+
+CREATE TABLE music_albums (
+	id SERIAL PRIMARY KEY,
+	on_spotify BOOL,
+	publish_date DATE,
+	archieved BOOL,
+	genre_id INTEGER REFERENCES genres(id),
+	author_id INTEGER REFERENCES authors(id),
+	source_id INTEGER REFERENCES sources(id),
+	label_id INTEGER REFERENCES labels(id)
+);
